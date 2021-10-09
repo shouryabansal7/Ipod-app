@@ -1,34 +1,45 @@
 import React from 'react';
+import ZingTouch from 'zingtouch';
 
 
 class Wheel extends React.Component{
     constructor(){
         super();
     }
+
+    rotate = () => {
+        var Parentregion = document.getElementById('wheel-container');
+        var myRegion = new ZingTouch.Region(Parentregion);
+        var child = document.getElementById('wheel');
+
+        myRegion.bind(child, 'rotate', function(e){
+            console.log('working rotate feature');
+        });
+    }
     render() {
         return (
-            <div style = {styles.wheelContainer} className='wheel-container'>
-            <div style = {styles.wheel}>
-                <div style = {styles.buttonContainer}>
-                    <div style = {styles.menuButton}>
-                        <img style = {styles.image} src="https://image.flaticon.com/icons/svg/3039/3039357.svg" />
-                    </div>
+            <div style = {styles.wheelContainer} className='wheel-container' id='wheel-container'>
+                <div style = {styles.wheel} id="wheel" onMouseOver={this.rotate}>
+                    <div style = {styles.buttonContainer}>
+                        <div style = {styles.menuButton}>
+                            <img style = {styles.image} src="https://image.flaticon.com/icons/svg/3039/3039357.svg" />
+                        </div>
 
-                </div>
-                <div style = {styles.buttonContainer}>
-                    <div style = {styles.middleButtons}>
-                        <img style = {styles.image} src="https://image.flaticon.com/icons/svg/2404/2404393.svg" />
-                        <div style={{backgroundColor : 'lightgrey' , width : '5rem' , height : '5rem' , borderRadius : '50%'}}></div>
-                        <img style = {styles.image} src="https://image.flaticon.com/icons/svg/2404/2404395.svg" />
                     </div>
-                </div>
-                <div style = {styles.buttonContainer}>
-                    <div style = {styles.playButton}>
-                        <img style = {styles.image} src="https://image.flaticon.com/icons/svg/2404/2404317.svg" />
+                    <div style = {styles.buttonContainer}>
+                        <div style = {styles.middleButtons}>
+                            <img style = {styles.image} src="https://image.flaticon.com/icons/svg/2404/2404393.svg" />
+                            <div style={{backgroundColor : 'lightgrey' , width : '5rem' , height : '5rem' , borderRadius : '50%'}}></div>
+                            <img style = {styles.image} src="https://image.flaticon.com/icons/svg/2404/2404395.svg" />
+                        </div>
+                    </div>
+                    <div style = {styles.buttonContainer}>
+                        <div style = {styles.playButton}>
+                            <img style = {styles.image} src="https://image.flaticon.com/icons/svg/2404/2404317.svg" />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         );
     }  
 }
