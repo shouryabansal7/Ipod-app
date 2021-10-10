@@ -10,9 +10,9 @@ class Wheel extends React.Component{
     rotate = () => {
         var Parentregion = document.getElementById('wheel-container');
         var myRegion = new ZingTouch.Region(Parentregion);
-        var child = document.getElementById('wheel');
+        var childRegion = document.getElementById('wheel');
 
-        myRegion.bind(child, 'rotate', function(e){
+        myRegion.bind(childRegion, 'rotate', function(e){
             console.log('working rotate feature');
         });
     }
@@ -46,14 +46,14 @@ class Wheel extends React.Component{
 
 const styles = {
     wheelContainer : {
-        height : '13rem',
+        height : '14rem',
         width : 'inherit',
         backgroundColor : 'lightgrey',
         alignSelf : 'flex-end'
     },
     wheel : {
-        width : '15rem',
-        height : 'inherit',
+        width : '80%',
+        height : '90%',
         backgroundColor : 'white',
         margin : 'auto',
         borderRadius : '50%',

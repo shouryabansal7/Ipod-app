@@ -1,5 +1,6 @@
 import React from 'react';
 import Wheel from './Wheel';
+import Screen from './Screen';
 
 
 class Ipod extends React.Component{
@@ -9,6 +10,7 @@ class Ipod extends React.Component{
     render() {
         return (
           <div style={style.ipodContainer}>
+            <Screen />
             <Wheel />
           </div>
         );
@@ -17,7 +19,7 @@ class Ipod extends React.Component{
 
 const style = {
     ipodContainer: {
-        height: '20rem',
+        height: '40rem',
         width: '17rem',
         backgroundColor: 'black',
         margin: 'auto',
