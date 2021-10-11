@@ -6,8 +6,23 @@ class Ipod extends React.Component{
     constructor(){
         super();
         this.state = {
-            activeItem:'Wallpapers'
+            activeItem:'Wallpapers',
+            activePage: 'Home'
         }
+    }
+
+    changePage = () =>{
+        this.setState({
+            activeItem: this.state.activeItem,
+            activePage: this.state.activeItem
+        });
+    }
+
+    changePageToHome = () =>{
+        this.setState({
+            activeItem: this.state.activeItem,
+            activePage: 'Home'
+        });
     }
 
     componentDidUpdate(){
@@ -17,7 +32,7 @@ class Ipod extends React.Component{
     rotate = () => {
         var currentAngle=15;
         var Parentregion = document.getElementById('wheel-container');
-        var myRegion = ZingTouch.Region(Parentregion);
+        var myRegion = new ZingTouch.Region(Parentregion);
         var childRegion = document.getElementById('wheel');
         var change=0;
         var self = this;
@@ -82,19 +97,19 @@ class Ipod extends React.Component{
     render() {
         return (
             <div style = {styles.ipodContainer}>
-                <Screen activeItem={this.state.activeItem}/>
+                <Screen activePage={this.state.activePage} activeItem={this.state.activeItem}/>
                 <div style = {styles.wheelContainer} id='wheel-container'>
                     <div id='wheel' style = {styles.wheel} onClick={this.rotate}>
                         <div style = {styles.buttonContainer}>
                             <div style = {styles.menuButton}>
-                                <img style = {styles.image} src="https://image.flaticon.com/icons/svg/3039/3039357.svg" />
+                                <img onClick={this.changePageToHome} style = {styles.image} src="https://image.flaticon.com/icons/svg/3039/3039357.svg" />
                             </div>
 
                         </div>
                         <div style = {styles.buttonContainer}>
                             <div style = {styles.middleButtons}>
                                 <img style = {styles.image} src="https://image.flaticon.com/icons/svg/2404/2404393.svg" />
-                                <div style={{backgroundColor : 'lightgrey' , width : '5rem' , height : '5rem' , borderRadius : '50%'}}></div>
+                                <div onClick={this.changePage} style={{backgroundColor : 'lightgrey' , width : '5rem' , height : '5rem' , borderRadius : '50%'}}></div>
                                 <img style = {styles.image} src="https://image.flaticon.com/icons/svg/2404/2404395.svg" />
                             </div>
                         </div>

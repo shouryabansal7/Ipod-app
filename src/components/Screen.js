@@ -1,5 +1,7 @@
 import React from 'react';
 import Home from './Home';
+import Settings from './Settings';
+import Games from './Games';
 
 
 class Screen extends React.Component{
@@ -9,7 +11,11 @@ class Screen extends React.Component{
     render() {
         return (
           <div style={style.screen}>
-            <Home activeItem={this.props.activeItem}/>
+                {this.props.activePage==='Home'?<Home activeItem={this.props.activeItem}/> : null}
+                {this.props.activePage==='Wallpapers'?<Home activeItem={this.props.activeItem}/> : null}
+                {this.props.activePage==='Games'?<Games /> : null}
+                {this.props.activePage==='Music'?<Home activeItem={this.props.activeItem}/> : null}
+                {this.props.activePage==='Settings'?<Settings /> : null}
           </div>
         );
     }  
