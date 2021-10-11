@@ -12,7 +12,7 @@ class  Home extends React.Component{
                 <div style={styles.menuListLeft}>
                     <h2>Ipod.js</h2>
                     <ListGroup>
-                    <ListGroup.Item style={{border:'0'}} className={this.props.activeItem==='Wallpapers'?'active':''}>
+                        <ListGroup.Item style={{border:'0'}} className={this.props.activeItem==='Wallpapers'?'active':''}>
                             Wallpapers {this.props.activeItem==='Wallpapers'?<span style={{float:'right' ,fontWeight:'bold'}}>&gt;</span>:''}
                         </ListGroup.Item>
                         <ListGroup.Item style={{border:'0'}} className={this.props.activeItem==='Music'?'active':''}>

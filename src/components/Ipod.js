@@ -12,17 +12,31 @@ class Ipod extends React.Component{
     }
 
     changePage = () =>{
-        this.setState({
-            activeItem: this.state.activeItem,
-            activePage: this.state.activeItem
-        });
+        if(this.state.activeItem === 'Music'){
+            this.setState({
+                activeItem : 'All_Music',
+                activePage : this.state.activeItem
+            })
+        }else{
+            this.setState({
+                activeItem : this.state.activeItem,
+                activePage : this.state.activeItem
+            })
+        }
     }
 
     changePageToHome = () =>{
-        this.setState({
-            activeItem: this.state.activeItem,
-            activePage: 'Home'
-        });
+        if(this.state.activePage === 'Music'){
+            this.setState({
+                activeItem : 'Music',
+                activePage : 'Home'
+            })
+        }else{
+            this.setState({
+                activeItem : this.state.activeItem,
+                activePage : 'Home'
+            })
+        }
     }
 
     componentDidUpdate(){
@@ -46,25 +60,41 @@ class Ipod extends React.Component{
             if(newAngle < 0){
                 console.log(change);
                 change++;
-                if(change === 90){
+                if(change === 45){
                     console.log("change state");
                     change = 0;
-                    if(self.state.activeItem === 'Wallpapers'){
-                        self.setState({
-                            activeItem : "Music"
-                        })
-                    }else if(self.state.activeItem === 'Music'){
-                        self.setState({
-                            activeItem : "Games"
-                        })
-                    }else if(self.state.activeItem === 'Games'){
-                        self.setState({
-                            activeItem : "Settings"
-                        })
-                    }else if(self.state.activeItem === 'Settings'){
-                        self.setState({
-                            activeItem : "Wallpapers"
-                        })
+                    if(self.state.activePage === 'Home'){
+                        if(self.state.activeItem === 'Wallpapers'){
+                            self.setState({
+                                activeItem : "Music"
+                            })
+                        }else if(self.state.activeItem === 'Music'){
+                            self.setState({
+                                activeItem : "Games"
+                            })
+                        }else if(self.state.activeItem === 'Games'){
+                            self.setState({
+                                activeItem : "Settings"
+                            })
+                        }else if(self.state.activeItem === 'Settings'){
+                            self.setState({
+                                activeItem : "Wallpapers"
+                            })
+                        }
+                    }else if(self.state.activePage === 'Music'){
+                        if(self.state.activeItem === 'All_Music'){
+                            self.setState({
+                                activeItem : "Favourites"
+                            })
+                        }else if(self.state.activeItem === 'Favourites'){
+                            self.setState({
+                                activeItem : "Artists"
+                            })
+                        }else if(self.state.activeItem === 'Artists'){
+                            self.setState({
+                                activeItem : "All_Music"
+                            })
+                        }
                     }
                 }
             }else{
