@@ -28,18 +28,17 @@ class Ipod extends React.Component {
 
   changePageToHome = () => {
     if (
-      this.state.activePage === "Music" ||
-      this.state.activePage === "Wallpapers" ||
-      this.state.activePage === "Settings" ||
-      this.state.activePage === "Games"
+      this.state.activePage === "AllMusic" ||
+      this.state.activePage === "Favourites" ||
+      this.state.activePage === "Artists"
     ) {
       this.setState({
-        activeItem: this.state.activeItem,
+        activeItem: "Music",
         activePage: "Home",
       });
     } else {
       this.setState({
-        activeItem: "Music",
+        activeItem: this.state.activeItem,
         activePage: "Home",
       });
     }
@@ -159,7 +158,7 @@ class Ipod extends React.Component {
           activeItem={this.state.activeItem}
         />
         <div style={styles.wheelContainer} id="wheel-container">
-          <div id="wheel" style={styles.wheel} onClick={this.rotate}>
+          <div id="wheel" style={styles.wheel} onMouseOver={this.rotate}>
             <div style={styles.buttonContainer}>
               <div style={styles.menuButton}>
                 <img
@@ -207,13 +206,14 @@ class Ipod extends React.Component {
 
 const styles = {
   ipodContainer: {
-    height: "40rem",
-    width: "17rem",
-    backgroundColor: "black",
+    height: "34rem",
+    width: "18rem",
+    backgroundColor: "lightgrey",
     margin: "auto",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+    borderRadius: "6%",
   },
   wheelContainer: {
     height: "14rem",

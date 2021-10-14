@@ -69,6 +69,10 @@ const styles = {
     border: "1px solid lightgrey",
     height: "100%",
     width: "50%",
+    backgroundImage: 'url("./images/music.png")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    borderRadius: "0 12px 12px 0",
   },
 };
 
