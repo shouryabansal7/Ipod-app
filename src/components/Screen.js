@@ -7,6 +7,7 @@ import Music from "./Music";
 import AllMusic from "./AllMusic";
 import Favourites from "./Favourites";
 import Artists from "./Artists";
+import TitleBar from "./TitleBar";
 
 class Screen extends React.Component {
   constructor() {

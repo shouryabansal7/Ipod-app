@@ -1,6 +1,12 @@
 import React from "react";
 import ZingTouch from "zingtouch";
 import Screen from "./Screen";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faForward,
+  faBackward,
+  faFastForward,
+} from "@fortawesome/free-solid-svg-icons";
 
 class Ipod extends React.Component {
   constructor() {
@@ -161,18 +167,28 @@ class Ipod extends React.Component {
           <div id="wheel" style={styles.wheel} onMouseOver={this.rotate}>
             <div style={styles.buttonContainer}>
               <div style={styles.menuButton}>
-                <img
+                <p
                   onClick={this.changePageToHome}
-                  style={styles.image}
-                  src="https://image.flaticon.com/icons/svg/3039/3039357.svg"
-                />
+                  style={{
+                    color: "lightgrey",
+                    alignSelf: "center",
+                    fontWeight: "bolder",
+                  }}
+                >
+                  MENU
+                </p>
               </div>
             </div>
             <div style={styles.buttonContainer}>
               <div style={styles.middleButtons}>
-                <img
-                  style={styles.image}
-                  src="https://image.flaticon.com/icons/svg/2404/2404393.svg"
+                <FontAwesomeIcon
+                  icon={faBackward}
+                  style={{
+                    color: "lightgrey",
+                    alignSelf: "center",
+                    width: "2rem",
+                    height: "2rem",
+                  }}
                 />
                 <div
                   onClick={this.changePage}
@@ -183,17 +199,27 @@ class Ipod extends React.Component {
                     borderRadius: "50%",
                   }}
                 ></div>
-                <img
-                  style={styles.image}
-                  src="https://image.flaticon.com/icons/svg/2404/2404395.svg"
+                <FontAwesomeIcon
+                  icon={faForward}
+                  style={{
+                    color: "lightgrey",
+                    alignSelf: "center",
+                    width: "2rem",
+                    height: "2rem",
+                  }}
                 />
               </div>
             </div>
             <div style={styles.buttonContainer}>
               <div style={styles.playButton}>
-                <img
-                  style={styles.image}
-                  src="https://image.flaticon.com/icons/svg/2404/2404317.svg"
+                <FontAwesomeIcon
+                  icon={faFastForward}
+                  style={{
+                    color: "lightgrey",
+                    alignSelf: "center",
+                    width: "2rem",
+                    height: "2rem",
+                  }}
                 />
               </div>
             </div>
@@ -210,9 +236,11 @@ const styles = {
     width: "18rem",
     backgroundColor: "lightgrey",
     margin: "auto",
+    marginTop: "10%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+    alignItem: "center",
     borderRadius: "6%",
   },
   wheelContainer: {

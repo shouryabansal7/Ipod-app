@@ -1,34 +1,36 @@
-import React from 'react';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGamepad } from "@fortawesome/free-solid-svg-icons";
 
 class Games extends React.Component {
-    constructor(){
-        super();
-    }
-    render(){
-        return(
-            <div>
-                 <div style={styles.settings} >
-                    <img style={styles.image} src="https://media2.giphy.com/media/uYe2emzPgDfj2/giphy.webp?cid=ecf05e47fa455dac230de80fff0206077175b008801bc689&rid=giphy.webp" />
-                </div>
-            </div>
-        );
-    }
+  constructor() {
+    super();
+  }
+  render() {
+    return (
+      <div>
+        <div style={styles.games}>
+          <FontAwesomeIcon
+            icon={faGamepad}
+            style={{ width: "4rem", height: "50%" }}
+          />
+          <h3>Games</h3>
+        </div>
+      </div>
+    );
+  }
 }
 
 const styles = {
-    settings : {
-        width : '100%',
-        height : '100%',
-        display : 'flex',
-        flexDirection : 'row',
-        justifyContent : 'center'
-    },
-    image : {
-        width:'100%',
-        height:'100%',
-        alignSelf : 'center'
-    }
-}
-
+  games: {
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    marginTop: "25%",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+};
 
 export default Games;
