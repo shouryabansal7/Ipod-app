@@ -5,6 +5,8 @@ import Games from "./Games";
 import Wallpapers from "./Wallpapers";
 import Music from "./Music";
 import AllMusic from "./AllMusic";
+import Favourites from "./Favourites";
+import Artists from "./Artists";
 
 class Screen extends React.Component {
   constructor() {
@@ -23,6 +25,8 @@ class Screen extends React.Component {
         ) : null}
         {this.props.activePage === "Settings" ? <Settings /> : null}
         {this.props.activePage === "AllMusic" ? <AllMusic /> : null}
+        {this.props.activePage === "Favourites" ? <Favourites /> : null}
+        {this.props.activePage === "Artists" ? <Artists /> : null}
       </div>
     );
   }
