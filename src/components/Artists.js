@@ -39,6 +39,7 @@ const styles = {
     backgroundSize: "cover",
     backgroundPosition: "center",
     alignSelf: "center",
+    borderRadius: "5%",
   },
   imageContainer2: {
     height: "80px",
@@ -48,6 +49,7 @@ const styles = {
     backgroundPosition: "center",
     alignSelf: "center",
     marginLeft: "-4%",
+    borderRadius: "5%",
   },
   image: {
     width: "2rem",
@@ -62,6 +64,8 @@ const styles = {
   },
   subInfo: {
     alignSelf: "center",
+    fontSize: "1.2rem",
+    fontWeight: "300",
   },
 };
 

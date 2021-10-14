@@ -6,13 +6,13 @@ function AllMusic() {
     {
       title: "Perfect",
       artist: "Ed sheeran",
-      img_src: "Ed_Sheeran_Perfect_Single_cover.jpeg",
+      img_src: "./images/Ed_Sheeran_Perfect_Single_cover.jpeg",
       src: "./music/Perfect.mp3",
     },
     {
       title: "Love is gone",
-      artist: "Artist 2",
-      img_src: "./music/Love-Is-Gone-English-2021-20210226205252-500x500.jpeg",
+      artist: "SLANDER",
+      img_src: "./images/Love-Is-Gone-English-2021-20210226205252-500x500.jpeg",
       src: "./music/LoveIsGone.mp3",
     },
   ]);

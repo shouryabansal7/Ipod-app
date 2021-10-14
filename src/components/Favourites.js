@@ -6,7 +6,7 @@ function Favourites() {
     {
       title: "Perfect",
       artist: "Ed sheeran",
-      img_src: "Ed_Sheeran_Perfect_Single_cover.jpeg",
+      img_src: "./images/Ed_Sheeran_Perfect_Single_cover.jpeg",
       src: "./music/Perfect.mp3",
     },
   ]);

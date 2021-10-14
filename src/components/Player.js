@@ -1,10 +1,31 @@
 import React, { useState, useRef, useEffect } from "react";
 import Controls from "./Controls";
 import Details from "./Details";
+import Slider from "./Slider";
 
 function Player(props) {
   const audioEl = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [percentage, setPercentage] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+
+  const onChange = (e) => {
+    const audio = audioEl.current;
+    audio.currentTime = (audio.duration / 100) * e.target.value;
+    setPercentage(e.target.value);
+  };
+
+  const getCurrDuration = (e) => {
+    const percent = (
+      (e.currentTarget.currentTime / e.currentTarget.duration) *
+      100
+    ).toFixed(2);
+    const time = e.currentTarget.currentTime;
+
+    setPercentage(+percent);
+    setCurrentTime(time.toFixed(2));
+  };
 
   useEffect(() => {
     if (isPlaying) {
@@ -41,19 +62,24 @@ function Player(props) {
   };
 
   return (
-    <div className="c-player">
+    <div
+      className="c-player"
+      style={{ display: "flex", flexDirection: "column" }}
+    >
       <audio
+        id="audio"
         src={props.songs[props.currentSongIndex].src}
         ref={audioEl}
       ></audio>
-      <h4>Playing now</h4>
+      <h4 style={{ margin: "auto", fontSize: "1rem" }}>Playing now</h4>
       <Details song={props.songs[props.currentSongIndex]} />
       <Controls
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
         SkipSong={SkipSong}
       />
-      <p>
+      <Slider percentage={percentage} onChange={onChange} />
+      <p style={{ margin: "auto", fontSize: "0.9rem" }}>
         Next up:{" "}
         <span>
           {props.songs[props.nextSongIndex].title} by{" "}
