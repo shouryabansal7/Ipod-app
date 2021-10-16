@@ -44,7 +44,7 @@ class Ipod extends React.Component {
       });
     } else {
       this.setState({
-        activeItem: this.state.activeItem,
+        activeItem: this.state.activePage,
         activePage: "Home",
       });
     }

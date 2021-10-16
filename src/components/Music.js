@@ -10,7 +10,15 @@ class Music extends React.Component {
     return (
       <div style={styles.musicScreen}>
         <div style={styles.menuListLeft}>
-          <h2>Music.js</h2>
+          <h2
+            style={{
+              textAlign: "center",
+              fontFamily: "sans-serif",
+              fontSize: "larger",
+            }}
+          >
+            Music
+          </h2>
           <ListGroup>
             <ListGroup.Item
               style={{ border: "0" }}

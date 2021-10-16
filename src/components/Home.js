@@ -9,7 +9,15 @@ class Home extends React.Component {
     return (
       <div style={styles.homeScreen}>
         <div style={styles.menuListLeft}>
-          <h2>Ipod.js</h2>
+          <h2
+            style={{
+              textAlign: "center",
+              fontFamily: "sans-serif",
+              fontSize: "larger",
+            }}
+          >
+            Ipod
+          </h2>
           <ListGroup>
             <ListGroup.Item
               style={{ border: "0" }}
