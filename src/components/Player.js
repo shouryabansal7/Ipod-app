@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Controls from "./Controls";
 import Details from "./Details";
 import Slider from "./Slider";
+import ControlPanel from "./ControlPanel";
 
 function Player(props) {
   const audioEl = useRef(null);
@@ -69,6 +70,10 @@ function Player(props) {
       <audio
         id="audio"
         src={props.songs[props.currentSongIndex].src}
+        onTimeUpdate={getCurrDuration}
+        onLoadedData={(e) => {
+          setDuration(e.currentTarget.duration.toFixed(2));
+        }}
         ref={audioEl}
       ></audio>
       <h4 style={{ margin: "auto", fontSize: "1rem" }}>Playing now</h4>
@@ -77,8 +82,11 @@ function Player(props) {
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
         SkipSong={SkipSong}
+        duration={duration}
+        currentTime={currentTime}
       />
       <Slider percentage={percentage} onChange={onChange} />
+      <ControlPanel duration={duration} currentTime={currentTime} />
       <p style={{ margin: "auto", fontSize: "0.9rem" }}>
         Next up:{" "}
         <span>
