@@ -1,5 +1,6 @@
 import React from "react";
 
+//render the artist page
 class Artists extends React.Component {
   constructor() {
     super();
@@ -25,6 +26,8 @@ class Artists extends React.Component {
     );
   }
 }
+
+//adding styles to artists page
 const styles = {
   artistsContainer: {
     height: "100%",

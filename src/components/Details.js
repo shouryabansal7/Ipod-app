@@ -1,5 +1,6 @@
 import React from "react";
 
+//this page renders the details of the song
 function Details(props) {
   return (
     <div

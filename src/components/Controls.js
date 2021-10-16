@@ -7,6 +7,7 @@ import {
   faBackward,
 } from "@fortawesome/free-solid-svg-icons";
 
+//renders controls and uses fontAwesome to provide icon
 function Controls(props) {
   return (
     <div
@@ -43,6 +44,8 @@ function Controls(props) {
   );
 }
 
+//three button- previous, play, next
+//adding styles to the buttons
 const style = {
   button: {
     backgroundColor: "white",

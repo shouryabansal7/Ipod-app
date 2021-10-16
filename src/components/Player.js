@@ -4,6 +4,7 @@ import Details from "./Details";
 import Slider from "./Slider";
 import ControlPanel from "./ControlPanel";
 
+//using hook to set state
 function Player(props) {
   const audioEl = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -11,12 +12,14 @@ function Player(props) {
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
 
+  //on change of event sets the percentage of song completed
   const onChange = (e) => {
     const audio = audioEl.current;
     audio.currentTime = (audio.duration / 100) * e.target.value;
     setPercentage(e.target.value);
   };
 
+  //gets the curr duration of the song
   const getCurrDuration = (e) => {
     const percent = (
       (e.currentTarget.currentTime / e.currentTarget.duration) *
@@ -28,6 +31,7 @@ function Player(props) {
     setCurrentTime(time.toFixed(2));
   };
 
+  //toggle for play and pause
   useEffect(() => {
     if (isPlaying) {
       audioEl.current.play();
@@ -36,6 +40,7 @@ function Player(props) {
     }
   });
 
+  //function to skip the song
   const SkipSong = (forwards = true) => {
     if (forwards) {
       props.setCurrentSongIndex(() => {
@@ -62,6 +67,7 @@ function Player(props) {
     }
   };
 
+  //sending informations as props to components
   return (
     <div
       className="c-player"

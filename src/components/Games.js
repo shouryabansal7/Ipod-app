@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGamepad } from "@fortawesome/free-solid-svg-icons";
 
+//render the game page in the ipod using fontawesome icons
 class Games extends React.Component {
   constructor() {
     super();

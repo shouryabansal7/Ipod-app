@@ -1,6 +1,7 @@
 import React from "react";
-import "./controlPanel.css";
+import "../css/controlPanel.css";
 
+//page render timer for songs
 function ControlPanel({ duration, currentTime }) {
   function secondsToHms(seconds) {
     if (!seconds) return "00:00";

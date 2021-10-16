@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Player from "./Player";
 
+//using hooks to give state a song
 function AllMusic() {
   const [songs] = useState([
     {
@@ -17,6 +18,7 @@ function AllMusic() {
     },
   ]);
 
+  //using hooks to set the current and next song index the array of songs
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [nextSongIndex, setNextSongIndex] = useState(0);
 
@@ -30,6 +32,7 @@ function AllMusic() {
     });
   }, [currentSongIndex]);
 
+  //passing informations as props to the player
   return (
     <div className="AllMusic">
       <Player

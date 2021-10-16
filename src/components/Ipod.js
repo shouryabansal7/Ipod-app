@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 class Ipod extends React.Component {
+  //seting the initial state
   constructor() {
     super();
     this.state = {
@@ -18,6 +19,7 @@ class Ipod extends React.Component {
     };
   }
 
+  //function to change page
   changePage = () => {
     if (this.state.activeItem === "Music") {
       this.setState({
@@ -32,6 +34,7 @@ class Ipod extends React.Component {
     }
   };
 
+  //function to change page to home
   changePageToHome = () => {
     if (
       this.state.activePage === "AllMusic" ||
@@ -63,19 +66,26 @@ class Ipod extends React.Component {
     var self = this;
     self.state.enter = self.state.enter + 1;
 
+    //setting the parent and child region
     if (self.state.enter < 2) {
+      //using rotate feacture
+      //keeping the count of the times entered the region in one click
       myRegion.bind(childRegion, "rotate", function (e) {
         console.log("working rotate feature");
 
+        //calculating the angle difference
         var newAngle = e.detail.distanceFromLast;
         console.log(currentAngle, newAngle);
 
+        //if scroll is clockwise
         if (newAngle < 0) {
           console.log(change);
           change++;
+          //if change in angle is significant
           if (change === 45) {
             console.log("change state");
             change = 0;
+            //for the active page home
             if (self.state.activePage === "Home") {
               if (self.state.activeItem === "Wallpapers") {
                 self.setState({
@@ -94,6 +104,7 @@ class Ipod extends React.Component {
                   activeItem: "Wallpapers",
                 });
               }
+              //for the active page music menu will be of music page
             } else if (self.state.activePage === "Music") {
               if (self.state.activeItem === "AllMusic") {
                 self.setState({
@@ -110,12 +121,15 @@ class Ipod extends React.Component {
               }
             }
           }
+          //if the scroll is non clockwise
         } else {
           console.log(change);
           change++;
+          //if change in angle is significant
           if (change === 45) {
             console.log("change state");
             change = 0;
+            //for the active page home
             if (self.state.activePage === "Home") {
               if (self.state.activeItem === "Wallpapers") {
                 self.setState({
@@ -134,6 +148,7 @@ class Ipod extends React.Component {
                   activeItem: "Games",
                 });
               }
+              //for the active page music menu will be of music page
             } else if (self.state.activePage === "Music") {
               if (self.state.activeItem === "AllMusic") {
                 self.setState({
@@ -156,6 +171,10 @@ class Ipod extends React.Component {
       console.log("Not allowed to enter");
     }
   };
+
+  //rendering the ipod screen and buttons (wheel)
+  //on clicking the menu the page changes to home
+  //central circle button is used to click and change page
   render() {
     return (
       <div style={styles.ipodContainer}>
@@ -230,13 +249,14 @@ class Ipod extends React.Component {
   }
 }
 
+//adding styles to ipod wheel
 const styles = {
   ipodContainer: {
     height: "34rem",
     width: "18rem",
     backgroundColor: "lightgrey",
     margin: "auto",
-    marginTop: "10%",
+    marginTop: "7%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",

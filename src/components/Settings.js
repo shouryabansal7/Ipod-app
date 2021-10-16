@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWrench } from "@fortawesome/free-solid-svg-icons";
 
+//render the settings page in the ipod using fontawesome icons
 class Settings extends React.Component {
   constructor() {
     super();

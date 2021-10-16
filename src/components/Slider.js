@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import "./slider.css";
-import "./thumb.css";
+import "../css/slider.css";
+import "../css/thumb.css";
 
+//slider
 function Slider({ percentage = 0, onChange }) {
+  //using hooks
   const [position, setPosition] = useState(0);
   const [marginLeft, setMarginLeft] = useState(0);
   const [progressBarWidth, setProgressBarWidth] = useState(0);

@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMobile } from "@fortawesome/free-solid-svg-icons";
 
+//render the wallpaper page in the ipod using fontawesome icons
 class Wallpapers extends React.Component {
   constructor() {
     super();

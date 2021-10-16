@@ -20,6 +20,8 @@ class Music extends React.Component {
             Music
           </h2>
           <ListGroup>
+            {/*the list item which matches the condition of active item has the active className
+            which helps in highlighting it */}
             <ListGroup.Item
               style={{ border: "0" }}
               className={this.props.activeItem === "AllMusic" ? "active" : ""}

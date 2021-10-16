@@ -8,11 +8,13 @@ import AllMusic from "./AllMusic";
 import Favourites from "./Favourites";
 import Artists from "./Artists";
 
+//loads the ipod screen
 class Screen extends React.Component {
   constructor() {
     super();
   }
   render() {
+    //the desired page component is rendered on the basis of activePage and activeItem
     return (
       <div style={style.screen}>
         {this.props.activePage === "Home" ? (
